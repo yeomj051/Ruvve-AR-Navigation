@@ -1,0 +1,836 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BA6A5382790915135487DA9 /* libPods-ruvve-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31F89DD51AE82BAD2FD28789 /* libPods-ruvve-iosTests.a */; };
+		C5739B192705697C00D8AFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B182705697C00D8AFC4 /* AppDelegate.swift */; };
+		C5739B1B27056A4000D8AFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5739B1A27056A4000D8AFC4 /* Main.storyboard */; };
+		C5739B1D27056B4B00D8AFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5739B1C27056B4B00D8AFC4 /* LaunchScreen.storyboard */; };
+		C5739B1F27056BA500D8AFC4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B1E27056BA500D8AFC4 /* MainVC.swift */; };
+		C5739B2127056C3600D8AFC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B2027056C3600D8AFC4 /* SceneDelegate.swift */; };
+		C5739B2327056C5500D8AFC4 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B2227056C5500D8AFC4 /* MapVC.swift */; };
+		C5739B2527056C7F00D8AFC4 /* DirectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B2427056C7F00D8AFC4 /* DirectVC.swift */; };
+		C5739B2727056C9C00D8AFC4 /* PositionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B2627056C9C00D8AFC4 /* PositionListVC.swift */; };
+		C5739B2927056CC100D8AFC4 /* PositionPop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5739B2827056CC000D8AFC4 /* PositionPop.storyboard */; };
+		C5739B2B27056CE700D8AFC4 /* PositionPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B2A27056CE700D8AFC4 /* PositionPopVC.swift */; };
+		C5739B35270577AB00D8AFC4 /* libPods-ruvve-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B34270577AB00D8AFC4 /* libPods-ruvve-ios.a */; };
+		C5739B37270578E100D8AFC4 /* TMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B36270578E100D8AFC4 /* TMapSDK.framework */; };
+		C5739B38270578E200D8AFC4 /* TMapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B36270578E100D8AFC4 /* TMapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5D5992B270564D900D8BE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D5992A270564D900D8BE1E /* Assets.xcassets */; };
+		C5D5992E270564D900D8BE1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D5992D270564D900D8BE1E /* Preview Assets.xcassets */; };
+		C5D59938270564D900D8BE1E /* ruvve_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D59937270564D900D8BE1E /* ruvve_iosTests.swift */; };
+		C5D59942270564D900D8BE1E /* ruvve_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D59941270564D900D8BE1E /* ruvve_iosUITests.swift */; };
+		C5D59944270564D900D8BE1E /* ruvve_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D59943270564D900D8BE1E /* ruvve_iosUITestsLaunchTests.swift */; };
+		C5D59953270565F900D8BE1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5D59952270565F700D8BE1E /* GoogleService-Info.plist */; };
+		F2EA8D27209A3344096AD2F4 /* libPods-ruvve-ios-ruvve-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C441BDA4B404E0AA52C0C0 /* libPods-ruvve-ios-ruvve-iosUITests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5D59934270564D900D8BE1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D5991B270564D500D8BE1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5D59922270564D500D8BE1E;
+			remoteInfo = "ruvve-ios";
+		};
+		C5D5993E270564D900D8BE1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D5991B270564D500D8BE1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5D59922270564D500D8BE1E;
+			remoteInfo = "ruvve-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5739B39270578E200D8AFC4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C5739B38270578E200D8AFC4 /* TMapSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1716E9FEBB22676A8BF2D33E /* Pods-ruvve-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios.debug.xcconfig"; path = "Target Support Files/Pods-ruvve-ios/Pods-ruvve-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		31F89DD51AE82BAD2FD28789 /* libPods-ruvve-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruvve-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34EB73934F32B8DD80481798 /* Pods-ruvve-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios.release.xcconfig"; path = "Target Support Files/Pods-ruvve-ios/Pods-ruvve-ios.release.xcconfig"; sourceTree = "<group>"; };
+		36D31450CA5937D7E2F5A640 /* Pods-ruvve-ios-ruvve-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios-ruvve-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-ruvve-ios-ruvve-iosUITests/Pods-ruvve-ios-ruvve-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		42C441BDA4B404E0AA52C0C0 /* libPods-ruvve-ios-ruvve-iosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ruvve-ios-ruvve-iosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D187AE54A31079724CD0280 /* Pods-ruvve-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-ruvve-iosTests/Pods-ruvve-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2BA1E5CBBAAC0D5BF78A54B /* Pods-ruvve-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-iosTests.release.xcconfig"; path = "Target Support Files/Pods-ruvve-iosTests/Pods-ruvve-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		B334E90942244B1BD2CC0839 /* Pods-ruvve-ios-ruvve-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios-ruvve-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-ruvve-ios-ruvve-iosUITests/Pods-ruvve-ios-ruvve-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5739B182705697C00D8AFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C5739B1A27056A4000D8AFC4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C5739B1C27056B4B00D8AFC4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C5739B1E27056BA500D8AFC4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		C5739B2027056C3600D8AFC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C5739B2227056C5500D8AFC4 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		C5739B2427056C7F00D8AFC4 /* DirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectVC.swift; sourceTree = "<group>"; };
+		C5739B2627056C9C00D8AFC4 /* PositionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionListVC.swift; sourceTree = "<group>"; };
+		C5739B2827056CC000D8AFC4 /* PositionPop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PositionPop.storyboard; sourceTree = "<group>"; };
+		C5739B2A27056CE700D8AFC4 /* PositionPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionPopVC.swift; sourceTree = "<group>"; };
+		C5739B34270577AB00D8AFC4 /* libPods-ruvve-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-ruvve-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5739B36270578E100D8AFC4 /* TMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMapSDK.framework; path = "ruvve-ios/TMapSDK.framework"; sourceTree = "<group>"; };
+		C5D59923270564D500D8BE1E /* ruvve-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ruvve-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D5992A270564D900D8BE1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C5D5992D270564D900D8BE1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5D59933270564D900D8BE1E /* ruvve-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ruvve-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D59937270564D900D8BE1E /* ruvve_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruvve_iosTests.swift; sourceTree = "<group>"; };
+		C5D5993D270564D900D8BE1E /* ruvve-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ruvve-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D59941270564D900D8BE1E /* ruvve_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruvve_iosUITests.swift; sourceTree = "<group>"; };
+		C5D59943270564D900D8BE1E /* ruvve_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruvve_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5D59950270564F200D8BE1E /* ruvve-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ruvve-ios.entitlements"; sourceTree = "<group>"; };
+		C5D59951270564F600D8BE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C5D59952270565F700D8BE1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5D59920270564D500D8BE1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5739B35270577AB00D8AFC4 /* libPods-ruvve-ios.a in Frameworks */,
+				C5739B37270578E100D8AFC4 /* TMapSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D59930270564D900D8BE1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA6A5382790915135487DA9 /* libPods-ruvve-iosTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D5993A270564D900D8BE1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2EA8D27209A3344096AD2F4 /* libPods-ruvve-ios-ruvve-iosUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45F536AC7490E439963081FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1716E9FEBB22676A8BF2D33E /* Pods-ruvve-ios.debug.xcconfig */,
+				34EB73934F32B8DD80481798 /* Pods-ruvve-ios.release.xcconfig */,
+				B334E90942244B1BD2CC0839 /* Pods-ruvve-ios-ruvve-iosUITests.debug.xcconfig */,
+				36D31450CA5937D7E2F5A640 /* Pods-ruvve-ios-ruvve-iosUITests.release.xcconfig */,
+				9D187AE54A31079724CD0280 /* Pods-ruvve-iosTests.debug.xcconfig */,
+				A2BA1E5CBBAAC0D5BF78A54B /* Pods-ruvve-iosTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		53173E08E0D9ECF3C463F4E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5739B36270578E100D8AFC4 /* TMapSDK.framework */,
+				C5739B34270577AB00D8AFC4 /* libPods-ruvve-ios.a */,
+				42C441BDA4B404E0AA52C0C0 /* libPods-ruvve-ios-ruvve-iosUITests.a */,
+				31F89DD51AE82BAD2FD28789 /* libPods-ruvve-iosTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C557907E2705D61C0042DA9C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5739B2A27056CE700D8AFC4 /* PositionPopVC.swift */,
+				C5739B1E27056BA500D8AFC4 /* MainVC.swift */,
+				C5739B2227056C5500D8AFC4 /* MapVC.swift */,
+				C5739B2427056C7F00D8AFC4 /* DirectVC.swift */,
+				C5739B2627056C9C00D8AFC4 /* PositionListVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C557907F2705D6800042DA9C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C5739B1A27056A4000D8AFC4 /* Main.storyboard */,
+				C5739B1C27056B4B00D8AFC4 /* LaunchScreen.storyboard */,
+				C5739B2827056CC000D8AFC4 /* PositionPop.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5D5991A270564D500D8BE1E = {
+			isa = PBXGroup;
+			children = (
+				C5D59925270564D500D8BE1E /* ruvve-ios */,
+				C5D59936270564D900D8BE1E /* ruvve-iosTests */,
+				C5D59940270564D900D8BE1E /* ruvve-iosUITests */,
+				C5D59924270564D500D8BE1E /* Products */,
+				45F536AC7490E439963081FA /* Pods */,
+				53173E08E0D9ECF3C463F4E6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C5D59924270564D500D8BE1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5D59923270564D500D8BE1E /* ruvve-ios.app */,
+				C5D59933270564D900D8BE1E /* ruvve-iosTests.xctest */,
+				C5D5993D270564D900D8BE1E /* ruvve-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5D59925270564D500D8BE1E /* ruvve-ios */ = {
+			isa = PBXGroup;
+			children = (
+				C557907F2705D6800042DA9C /* Storyboards */,
+				C557907E2705D61C0042DA9C /* ViewControllers */,
+				C5D59951270564F600D8BE1E /* Info.plist */,
+				C5D59950270564F200D8BE1E /* ruvve-ios.entitlements */,
+				C5D59952270565F700D8BE1E /* GoogleService-Info.plist */,
+				C5D5992A270564D900D8BE1E /* Assets.xcassets */,
+				C5D5992C270564D900D8BE1E /* Preview Content */,
+				C5739B182705697C00D8AFC4 /* AppDelegate.swift */,
+				C5739B2027056C3600D8AFC4 /* SceneDelegate.swift */,
+			);
+			path = "ruvve-ios";
+			sourceTree = "<group>";
+		};
+		C5D5992C270564D900D8BE1E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C5D5992D270564D900D8BE1E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C5D59936270564D900D8BE1E /* ruvve-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5D59937270564D900D8BE1E /* ruvve_iosTests.swift */,
+			);
+			path = "ruvve-iosTests";
+			sourceTree = "<group>";
+		};
+		C5D59940270564D900D8BE1E /* ruvve-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C5D59941270564D900D8BE1E /* ruvve_iosUITests.swift */,
+				C5D59943270564D900D8BE1E /* ruvve_iosUITestsLaunchTests.swift */,
+			);
+			path = "ruvve-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5D59922270564D500D8BE1E /* ruvve-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5D59947270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-ios" */;
+			buildPhases = (
+				1350BFD16235B28311E57A2B /* [CP] Check Pods Manifest.lock */,
+				C5D5991F270564D500D8BE1E /* Sources */,
+				C5D59920270564D500D8BE1E /* Frameworks */,
+				C5D59921270564D500D8BE1E /* Resources */,
+				C5739B39270578E200D8AFC4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ruvve-ios";
+			productName = "ruvve-ios";
+			productReference = C5D59923270564D500D8BE1E /* ruvve-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5D59932270564D900D8BE1E /* ruvve-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5D5994A270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-iosTests" */;
+			buildPhases = (
+				C8943CE4AC40617FF9234425 /* [CP] Check Pods Manifest.lock */,
+				C5D5992F270564D900D8BE1E /* Sources */,
+				C5D59930270564D900D8BE1E /* Frameworks */,
+				C5D59931270564D900D8BE1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5D59935270564D900D8BE1E /* PBXTargetDependency */,
+			);
+			name = "ruvve-iosTests";
+			productName = "ruvve-iosTests";
+			productReference = C5D59933270564D900D8BE1E /* ruvve-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5D5993C270564D900D8BE1E /* ruvve-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5D5994D270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-iosUITests" */;
+			buildPhases = (
+				3C7629A27B403C67C2BE0AC1 /* [CP] Check Pods Manifest.lock */,
+				C5D59939270564D900D8BE1E /* Sources */,
+				C5D5993A270564D900D8BE1E /* Frameworks */,
+				C5D5993B270564D900D8BE1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5D5993F270564D900D8BE1E /* PBXTargetDependency */,
+			);
+			name = "ruvve-iosUITests";
+			productName = "ruvve-iosUITests";
+			productReference = C5D5993D270564D900D8BE1E /* ruvve-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5D5991B270564D500D8BE1E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					C5D59922270564D500D8BE1E = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					C5D59932270564D900D8BE1E = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C5D59922270564D500D8BE1E;
+					};
+					C5D5993C270564D900D8BE1E = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C5D59922270564D500D8BE1E;
+					};
+				};
+			};
+			buildConfigurationList = C5D5991E270564D500D8BE1E /* Build configuration list for PBXProject "ruvve-ios" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5D5991A270564D500D8BE1E;
+			productRefGroup = C5D59924270564D500D8BE1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5D59922270564D500D8BE1E /* ruvve-ios */,
+				C5D59932270564D900D8BE1E /* ruvve-iosTests */,
+				C5D5993C270564D900D8BE1E /* ruvve-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5D59921270564D500D8BE1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D5992E270564D900D8BE1E /* Preview Assets.xcassets in Resources */,
+				C5D5992B270564D900D8BE1E /* Assets.xcassets in Resources */,
+				C5739B1B27056A4000D8AFC4 /* Main.storyboard in Resources */,
+				C5739B1D27056B4B00D8AFC4 /* LaunchScreen.storyboard in Resources */,
+				C5739B2927056CC100D8AFC4 /* PositionPop.storyboard in Resources */,
+				C5D59953270565F900D8BE1E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D59931270564D900D8BE1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D5993B270564D900D8BE1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1350BFD16235B28311E57A2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruvve-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C7629A27B403C67C2BE0AC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruvve-ios-ruvve-iosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8943CE4AC40617FF9234425 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ruvve-iosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5D5991F270564D500D8BE1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5739B2127056C3600D8AFC4 /* SceneDelegate.swift in Sources */,
+				C5739B192705697C00D8AFC4 /* AppDelegate.swift in Sources */,
+				C5739B1F27056BA500D8AFC4 /* MainVC.swift in Sources */,
+				C5739B2327056C5500D8AFC4 /* MapVC.swift in Sources */,
+				C5739B2B27056CE700D8AFC4 /* PositionPopVC.swift in Sources */,
+				C5739B2527056C7F00D8AFC4 /* DirectVC.swift in Sources */,
+				C5739B2727056C9C00D8AFC4 /* PositionListVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D5992F270564D900D8BE1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D59938270564D900D8BE1E /* ruvve_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D59939270564D900D8BE1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D59942270564D900D8BE1E /* ruvve_iosUITests.swift in Sources */,
+				C5D59944270564D900D8BE1E /* ruvve_iosUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5D59935270564D900D8BE1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5D59922270564D500D8BE1E /* ruvve-ios */;
+			targetProxy = C5D59934270564D900D8BE1E /* PBXContainerItemProxy */;
+		};
+		C5D5993F270564D900D8BE1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5D59922270564D500D8BE1E /* ruvve-ios */;
+			targetProxy = C5D5993E270564D900D8BE1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C5D59945270564D900D8BE1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C5D59946270564D900D8BE1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5D59948270564D900D8BE1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1716E9FEBB22676A8BF2D33E /* Pods-ruvve-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ruvve-ios/ruvve-ios.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ruvve-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ruvve-ios",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ruvve-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Ruvve;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Debug;
+		};
+		C5D59949270564D900D8BE1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34EB73934F32B8DD80481798 /* Pods-ruvve-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ruvve-ios/ruvve-ios.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ruvve-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ruvve-ios",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ruvve-ios/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Ruvve;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
+			};
+			name = Release;
+		};
+		C5D5994B270564D900D8BE1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D187AE54A31079724CD0280 /* Pods-ruvve-iosTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ruvve-ios.app/ruvve-ios";
+			};
+			name = Debug;
+		};
+		C5D5994C270564D900D8BE1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2BA1E5CBBAAC0D5BF78A54B /* Pods-ruvve-iosTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ruvve-ios.app/ruvve-ios";
+			};
+			name = Release;
+		};
+		C5D5994E270564D900D8BE1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B334E90942244B1BD2CC0839 /* Pods-ruvve-ios-ruvve-iosUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ruvve-ios";
+			};
+			name = Debug;
+		};
+		C5D5994F270564D900D8BE1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D31450CA5937D7E2F5A640 /* Pods-ruvve-ios-ruvve-iosUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ruvve-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5D5991E270564D500D8BE1E /* Build configuration list for PBXProject "ruvve-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D59945270564D900D8BE1E /* Debug */,
+				C5D59946270564D900D8BE1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5D59947270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D59948270564D900D8BE1E /* Debug */,
+				C5D59949270564D900D8BE1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5D5994A270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D5994B270564D900D8BE1E /* Debug */,
+				C5D5994C270564D900D8BE1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5D5994D270564D900D8BE1E /* Build configuration list for PBXNativeTarget "ruvve-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D5994E270564D900D8BE1E /* Debug */,
+				C5D5994F270564D900D8BE1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5D5991B270564D500D8BE1E /* Project object */;
+}
