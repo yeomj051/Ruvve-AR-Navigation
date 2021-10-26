@@ -1,4 +1,5 @@
 PODS:
+  - ARCL (1.3.1)
   - Firebase/Analytics (8.8.0):
     - Firebase/Core
   - Firebase/Core (8.8.0):
@@ -74,6 +75,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.2)
     - nanopb (~> 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GooglePlaces (5.1.0)
   - GoogleUtilities/AppDelegateSwizzler (7.5.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -101,8 +103,10 @@ PODS:
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
+  - ARCL (from `.`)
   - Firebase/Analytics
   - Firebase/Messaging
+  - GooglePlaces
 
 SPEC REPOS:
   trunk:
@@ -114,11 +118,17 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GooglePlaces
     - GoogleUtilities
     - nanopb
     - PromisesObjC
 
+EXTERNAL SOURCES:
+  ARCL:
+    :path: "."
+
 SPEC CHECKSUMS:
+  ARCL: ba0770a5053d0119cf5b463cf2b6d639f41af387
   Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
   FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
   FirebaseCore: 98b29e3828f0a53651c363937a7f7d92a19f1ba2
@@ -127,10 +137,11 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 419b5c9d84f294a753c6501d8cfb9ced1ce37304
   GoogleAppMeasurement: 5ba1164e3c844ba84272555e916d0a6d3d977e91
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
+  GooglePlaces: c57cd5aa7e91d10fa5106c792de74f3bd6436260
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 995ad0c6d2b8dcde954e1cfc3ca0681f6e6b31be
+PODFILE CHECKSUM: f66c7cb8879c6f85a44ae082b72a4289ac464e1f
 
 COCOAPODS: 1.11.2

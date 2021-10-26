@@ -10,6 +10,11 @@ import UIKit
 import TMapSDK
 import CoreLocation
 
+struct Contact{
+    var addressData : String
+    var point : CLLocationCoordinate2D
+}
+
 class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var mapContainerView: UIView!
@@ -20,9 +25,19 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
     @IBOutlet weak var DepartureText: UITextField!
     @IBOutlet weak var DestinationText: UITextField!
     
+    var contacts = [Contact]()
+    
     let locationManager = CLLocationManager()
     
     var mapView:TMapView?
+    //전달데이터
+    // mapVC -> directVC
+    var paramData: String = ""
+    //var paramData2: String = ""
+    
+    // searchController -> directVC
+    var startPoint = CLLocationCoordinate2D()
+    var endPoint = CLLocationCoordinate2D()
     
     //api key
     let apiKey:String = "l7xxa70e1a4798de43cd969b92da7add4112"
@@ -33,7 +48,17 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        DepartureText.text = paramData
+//        DestinationText.text = paramData2
+        
+        self.startPoint
+        print("hiiiiiiiiiiiiiiii")
+        print(startPoint)
         //버튼디자인
+        
         DrivingButton.layer.zPosition = 999
         MyLocationButton.layer.zPosition = 999
         MyLocationButton.layer.cornerRadius = 50
@@ -49,22 +74,6 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         self.mapView?.delegate = self
         self.mapView?.setApiKey(apiKey)
         mapContainerView.addSubview(self.mapView!)
-        
-//        // 델리케이트 설정
-//        locationManager.delegate = self
-//        // 거리 정확도 설정
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        // 사용자에게 혀용받기 알림창 띄우기
-//        locationManager.requestWhenInUseAuthorization()
-        
-//        if CLLocationManager.locationServicesEnabled(){
-//            print("위차서비스 on 상태")
-//
-//            locationManager.startUpdatingLocation()
-//
-//        }else{
-//            print("위치서비스 off 상태")
-//        }
        
     }
     //키보드 내리기
@@ -81,14 +90,6 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         
         print("내위치", center)
-        print("원을 그리자")
-        //objFunc11()
-//        let circle = TMapCircle(position: center, radius: 50)
-//        circle.fillColor = .cyan
-//        circle.strokeColor = .black
-//        circle.opacity = 0.5
-//        circle.map = self.mapView
-//        self.circles.append(circle)
         
         print("위치바꾸기")
         self.mapView?.setCenter(center)
@@ -105,7 +106,6 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         circle.strokeWidth = 5
         
         circle.map = self.mapView
-        print("circle",circles)
         //self.circles.append(circle)
         self.locationManager.stopUpdatingLocation()
         
@@ -134,38 +134,6 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         }
         self.polylines.removeAll()
     }
-    
-    // 경로찾기
-    public func objFunc57() {
-        print("경로찾기 시작")
-        
-        self.clearMarkers()
-        self.clearPolylines()
-        
-        let pathData = TMapPathData()
-        let startPoint = CLLocationCoordinate2D(latitude: 37.6511988, longitude: 127.0139717)
-        let endPoint = CLLocationCoordinate2D(latitude: 37.6265967, longitude: 127.0342254)
-
-        pathData.findPathData(startPoint: startPoint, endPoint: endPoint) { (result, error)->Void in
-                    if let polyline = result {
-                        DispatchQueue.main.async {
-                            let marker1 = TMapMarker(position: startPoint)
-                            marker1.map = self.mapView
-                            marker1.title = "출발지"
-                            self.markers.append(marker1)
-
-                            let marker2 = TMapMarker(position: endPoint)
-                            marker2.map = self.mapView
-                            marker2.title = "목적지"
-                            self.markers.append(marker2)
-
-                            polyline.map = self.mapView
-                            self.polylines.append(polyline)
-                            self.mapView?.fitMapBoundsWithPolylines(self.polylines)
-                        }
-                    }
-        }
-    }
     // 원 제거
     public func objFunc13() {
         print("원 제거")
@@ -179,9 +147,15 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         print("--------change 버튼 눌림--------------")
         let textDepart = DepartureText.text
         let textDest = DestinationText.text
+        let chgStart = startPoint
+        let chgEnd = endPoint
         
         DepartureText.text = textDest
         DestinationText.text = textDepart
+        startPoint = chgEnd
+        endPoint = chgStart
+        
+        
     }
     
     //return 키보드 내리기
@@ -190,6 +164,7 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
         DestinationText.resignFirstResponder()
         return true
     }
+    
     //내위치찾기
     @IBAction func MyLocationFind(_ sender: Any) {
         
@@ -210,51 +185,112 @@ class DirectVC: UIViewController, TMapViewDelegate, CLLocationManagerDelegate, U
             print("위치서비스 off 상태")
         }
     }
-//    @IBAction func SearchDepart(_ sender: Any) {
-//        //옵셔널 바인딩
-//        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "PositionListVC"){
-//            self.navigationController?.pushViewController(controller, animated: true)
-//        }
-//    }
     
     // 경로찾기 버튼
     @IBAction func SearchClick(_ sender: Any) {
-        objFunc57()
+        print("경로찾기 시작")
+        
+        self.clearMarkers()
+        self.clearPolylines()
+        
+        let pathData = TMapPathData()
+        
+        let startPoint = self.startPoint
+        let endPoint = self.endPoint
+        
+        
+        // 출발지와 목적지 없을시 경고
+        if (startPoint.longitude == 0.0 || endPoint.longitude == 0.0 ){
+            
+            let alert = UIAlertController(title: nil, message: "출발지나 목적지를 확인해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        pathData.findPathData(startPoint: startPoint, endPoint: endPoint) { (result, error)->Void in
+                    if let polyline = result {
+                        DispatchQueue.main.async {
+                            let marker1 = TMapMarker(position: startPoint)
+                            marker1.map = self.mapView
+                            marker1.title = "출발지"
+                            self.markers.append(marker1)
+
+                            let marker2 = TMapMarker(position: endPoint)
+                            marker2.map = self.mapView
+                            marker2.title = "목적지"
+                            self.markers.append(marker2)
+
+                            polyline.map = self.mapView
+                            self.polylines.append(polyline)
+                            self.mapView?.fitMapBoundsWithPolylines(self.polylines)
+                        }
+                    }
+        }
     }
     // Driving
     @IBAction func DrivingClick(_ sender: Any) {
         print("----------Driving Click-----------")
-//        //옵셔널 바인딩
-//        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "PositionListVC"){
-//            self.navigationController?.pushViewController(controller, animated: true)
-//
-//        }
-    }
-    @IBAction func SearchAddressClick(_ sender: Any) {
-        
-        //옵셔널 바인딩
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "PositionListVC"){
-            self.navigationController?.pushViewController(controller, animated: true)
+        // 출발지와 목적지 없을시 경고
+        if (startPoint.longitude == 0.0 || endPoint.longitude == 0.0 ){
             
+            let alert = UIAlertController(title: nil, message: "출발지나 목적지를 확인해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
+        //옵셔널 바인딩
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "ARNaviVC")as? ARNaviVC {
+            
+            controller.startPoint = startPoint
+            controller.endPoint = endPoint
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+
         }
     }
-    
-    @available(iOS 13.0, *)
-    @IBAction func DestinationClick(_ sender: Any) {
+    @IBAction func SearchStartAddressClick(_ sender: Any) {
+
+        let controller = SearchController()
         
-        let storyboard = UIStoryboard.init(name: "PositionPop", bundle: nil)
+        controller.delegate = self
+        controller.flag = "start"
         
-        let popup = storyboard.instantiateViewController(identifier: "PositionPop")
+        self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
         
-        // 팝업 크기 설정
-        popup.modalPresentationStyle = .overCurrentContext
+    }
+    @IBAction func SearchEndAddressClick(_ sender: Any) {
+
+        let controller = SearchController()
         
-        let temp = popup as? PositionPopVC
+        controller.delegate = self
+        controller.flag = "end"
         
-        temp?.positionData = DestinationText.text ?? ""
-        print("positionPopup Open!!!!")
-        self.present( popup, animated: true, completion: nil)
+        self.present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+        
     }
     
+    //BackToMap
+    @IBAction func BackToMap(_ sender: Any) {
+        if(self.storyboard?.instantiateViewController(withIdentifier: "MapVC")as? MapVC) != nil {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
+extension DirectVC: AddContactDelegate{
+    func addStartContact(contact : Contact){
+        self.dismiss(animated : true){
+            self.DepartureText.text = contact.addressData
+            self.startPoint = contact.point
+            print("====Pass Data====")
+        }
+    }
+    func addEndContact(contact : Contact){
+        self.dismiss(animated : true){
+            self.DestinationText.text = contact.addressData
+            self.endPoint = contact.point
+            print("====Pass Data====")
+        }
+    }
+}

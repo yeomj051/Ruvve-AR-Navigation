@@ -8,20 +8,20 @@
 import UIKit
 import Firebase
 import FirebaseAnalytics
+import GooglePlaces
 
 @available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     var window: UIWindow?
+    //var userInfoglobal: AnyHashable?
     
-//    메세지 받고 나서 willPresent 에 메세지가 담김
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                   -> Void) {
       let userInfo = notification.request.content.userInfo
        Messaging.messaging().appDidReceiveMessage(userInfo)
-      print("111: ", userInfo)
       completionHandler([[.alert, .sound]])
     }
 
@@ -29,14 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
       let userInfo = response.notification.request.content.userInfo
+        //userInfoglobal = (userInfo as? AnyHashable)
       Messaging.messaging().appDidReceiveMessage(userInfo)
-      print("222: ", userInfo)
-
       completionHandler()
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-            print("Firebase registration token: \(fcmToken)")
+        print("Firebase registration token: \(fcmToken)")
     }
 
     // 실패시
@@ -54,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         
@@ -62,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             [weak self] granted, error in print("Permission granted: \(granted)")
         }
         application.registerForRemoteNotifications()
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyC4t1Bcil71m2xb7SvAt7urWIc55n9TZ6g")
+        
         return true
     }
     
