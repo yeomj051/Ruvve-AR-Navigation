@@ -1,5 +1,5 @@
 //
-//  POIViewController.swift
+//  ARNaviVC.swift
 //  RuvveNavigation
 //
 //  Created by Andrew Hart on 02/07/2017.
@@ -14,7 +14,8 @@ import UIKit
 
 @available(iOS 11.0, *)
 /// Displays Points of Interest in ARCL
-class POIViewController: UIViewController {
+// MARK: - StartVariable
+class ARNaviVC: UIViewController {
     
     @IBAction func stopButton(_ sender: Any) {
         animateIn(desiredView: blurView)
@@ -26,25 +27,12 @@ class POIViewController: UIViewController {
         animateOut(desiredView: blurView)
     }
     @IBAction func gostartButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let settingboard = self.storyboard?.instantiateViewController(withIdentifier: "DirectVC")
-//
-//        settingboard.DepartureText.text = startPlaceName
-//        settingboard.DestinationText.text = endPlaceName
-//
-//        self.navigationController?.pushViewController(settingboard, animated: true)
-//        print("goMap")
-        
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "DirectVC")as? DirectVC {
-            
-            controller.paramData = startPlaceName
-            controller.paramData2 = endPlaceName
-            controller.startPoint = startPoint
-            controller.endPoint = endPoint
-
-            self.navigationController?.pushViewController(controller, animated: true)
-
+        if(self.storyboard?.instantiateViewController(withIdentifier: "DirectVC")as? DirectVC) != nil {
+            self.navigationController?.popViewController(animated: true)
         }
+    }
+    @IBAction func mapViewUserLocation(_ sender: Any) {
+        centerMapOnUserLocation = true
     }
     
     @IBOutlet var popupView: UIView!
@@ -56,9 +44,11 @@ class POIViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var infoLabel: UILabel!
-    @IBOutlet var distance: UILabel!
-        @IBOutlet weak var nodePositionLabel: UILabel!
-
+    @IBOutlet var distanceLabel: UILabel!
+    var userToEnd: CLLocationDistance!
+    var userToUser: CLLocationDistance!
+    @IBOutlet var Alert: UILabel!
+    
     @IBOutlet var contentView: UIView!
     let sceneLocationView = SceneLocationView()
 
@@ -70,33 +60,35 @@ class POIViewController: UIViewController {
     var nowState: Bool = true
     var Time: Int = 0
     
-    var destCoor: MKCoordinateRegion!
+    //var destCoor: MKCoordinateRegion!
 
-    var centerMapOnUserLocation: Bool = true
+    var centerMapOnUserLocation: Bool = false
     var routes: [MKRoute]?
     
     var startPoint = CLLocationCoordinate2D()
     var endPoint = CLLocationCoordinate2D()
 
-    var startPlaceName: String = ""
-    var endPlaceName: String = ""
+//    var startPlaceName: String = ""
+//    var endPlaceName: String = ""
     
     var startLocation: MKMapItem!
     var destinationItem: MKMapItem!
+    var startUserBool: Bool = true
+    var startUserLocation: MKMapItem!
 
     var showMap = true
 
     let addNodeByTappingScreen = true
-
-    class func loadFromStoryboard() -> POIViewController {
-        return UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "ARCLViewController") as! POIViewController
-        // swiftlint:disable:previous force_cast
-    }
-
+    
+//
+//    class func loadFromStoryboard() -> ARNaviVC {
+//        return UIStoryboard(name: "Main", bundle: nil)
+//            .instantiateViewController(withIdentifier: "ARCLViewController") as! ARNaviVC
+//        // swiftlint:disable:previous force_cast
+//    }
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         startLocation = MKMapItem(placemark: MKPlacemark(coordinate: self.startPoint))
         
@@ -139,7 +131,24 @@ class POIViewController: UIViewController {
         sceneLocationView.frame = contentView.bounds
 
         mapView.isHidden = !showMap
+        
+        setAnnotaion(with: self.startPoint)
+        setAnnotaion(with: self.endPoint)
+        
+//        let appDel = UIApplication.shared.delegate as? AppDelegate
+//        if appDel?.userInfoglobal != nil{
+//            Alert.text = appDel?.userInfoglobal as? String
+//        }
 
+        UIView.animate(withDuration: 0.45,
+                       delay: 0,
+                       options: .allowUserInteraction,
+                       animations: {
+                        self.mapView.setCenter(self.startPoint, animated: false)
+        }, completion: { _ in
+            self.mapView.region.span = MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005)
+        })
+        
         if showMap {
 			updateUserLocationTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
 				self?.updateUserLocation()
@@ -148,43 +157,6 @@ class POIViewController: UIViewController {
         }
     }
     
-    //popup Animate
-    func animateIn(desiredView:UIView){
-        let backgroundView = self.view!
-        nowState = false
-        
-        backgroundView.addSubview(desiredView)
-        
-        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        desiredView.alpha = 0
-        desiredView.center = backgroundView.center
-        
-        stopTime.text = infoLabel.text
-        leaveDistance.text = " \(self.routes?[0].distance ?? 0)M"
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            desiredView.alpha = 1
-        })
-        
-    }
-    
-    func animateOut(desiredView:UIView){
-        nowState = true
-        UIView.animate(withDuration: 0.3, animations: {
-            desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            desiredView.alpha = 0
-        }, completion: { _ in
-            desiredView.removeFromSuperview()
-        })
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        restartAnimation()
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         print(#function)
         pauseAnimation()
@@ -205,7 +177,45 @@ class POIViewController: UIViewController {
         super.viewDidLayoutSubviews()
         sceneLocationView.frame = contentView.bounds
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        restartAnimation()
+    }
 
+    // MARK: - JusticeFunc
+    //popup Animate
+    func animateIn(desiredView:UIView){
+        let backgroundView = self.view!
+        nowState = false
+        
+        backgroundView.addSubview(desiredView)
+        
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = backgroundView.center
+        
+        stopTime.text = infoLabel.text
+        leaveDistance.text = " \(self.userToEnd ?? 0.0)M"
+//        moveDistance.text = " \(getDistance(to: self.startUserLocation, to: MKMapItem.forCurrentLocation(), to: true))M"
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
+    }
+    
+    func animateOut(desiredView:UIView){
+        nowState = true
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            desiredView.alpha = 0
+        }, completion: { _ in
+            desiredView.removeFromSuperview()
+        })
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         guard let touch = touches.first,
@@ -230,9 +240,8 @@ class POIViewController: UIViewController {
 }
 
 // MARK: - MKMapViewDelegate
-
 @available(iOS 11.0, *)
-extension POIViewController: MKMapViewDelegate {
+extension ARNaviVC: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
@@ -262,9 +271,8 @@ extension POIViewController: MKMapViewDelegate {
 }
 
 // MARK: - Implementation
-
 @available(iOS 11.0, *)
-extension POIViewController {
+extension ARNaviVC {
 
     /// Adds the appropriate ARKit models to the scene.  Note: that this won't
     /// do anything until the scene has a `currentLocation`.  It "polls" on that
@@ -305,7 +313,7 @@ extension POIViewController {
         sceneLocationView.autoenablesDefaultLighting = true
 
     }
-
+    // MARK: - UserUpdate
     @objc
     func updateUserLocation() {
         guard let currentLocation = sceneLocationView.sceneLocationManager.currentLocation else {
@@ -321,6 +329,11 @@ extension POIViewController {
                 self.userAnnotation = MKPointAnnotation()
                 self.mapView.addAnnotation(self.userAnnotation!)
             }
+            if self.startUserBool{
+                self.startUserLocation = MKMapItem(placemark: MKPlacemark(coordinate: currentLocation.coordinate))
+                self.startUserBool = false
+            }
+            
 
             UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: {
                 self.userAnnotation?.coordinate = currentLocation.coordinate
@@ -348,12 +361,14 @@ extension POIViewController {
         let hour = Time / 3600
 
         infoLabel.text = " \(hour.short):\(minute.short):\(second.short)" + "\""
-        distance.text = " \(self.routes?[0].distance ?? 0)M"
+        distanceLabel.text = " \(getDistance(to: MKMapItem.forCurrentLocation(), to: self.destinationItem, to: false))M"
+        moveDistance.text = " \(getDistance(to: self.startUserLocation, to: MKMapItem.forCurrentLocation(), to: true))M"
     }
 }
 
+// MARK: - GetDirections
 @available(iOS 11.0, *)
-extension POIViewController {
+extension ARNaviVC {
     
     func getDirections(to mapLocation: MKMapItem) {
 
@@ -376,11 +391,57 @@ extension POIViewController {
                 guard let self = self else {
                     return
                 }
-
                 self.routes = response.routes
-
             }
         })
+    }
+    
+    func getDistance(to StartLocation: MKMapItem, to EndLocation: MKMapItem, to userToUser: Bool) -> CLLocationDistance{
+        
+        var distanceIn: CLLocationDistance = 0.0
+        print(EndLocation)
+        print("9876543456700000000000000000000000")
+        let request = MKDirections.Request()
+        request.source = StartLocation
+        request.destination = EndLocation
+        request.requestsAlternateRoutes = false
+
+        let directions = MKDirections(request: request)
+
+        directions.calculate(completionHandler: { response, error in
+            if let error = error {
+                return print("Error getting directions: \(error.localizedDescription)")
+            }
+            guard let response = response else {
+                return assertionFailure("No error, but no response, either.")
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                if userToUser{
+                    self.userToUser = (response.routes.first?.distance)!
+                }else{
+                    self.userToEnd = (response.routes.first?.distance)!
+                }
+            }
+        })
+        if userToUser{
+            distanceIn = self.userToUser ?? 0.0
+        }else{
+            distanceIn = self.userToEnd ?? 0.0
+        }
+        return distanceIn
+    }
+    
+    func setAnnotaion(with coordinates: CLLocationCoordinate2D){
+        // Add a map pin
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinates
+        
+        mapView.addAnnotation(pin)
+        mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: true)
     }
 
 }

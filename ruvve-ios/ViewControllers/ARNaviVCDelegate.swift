@@ -1,5 +1,5 @@
 //
-//  POIViewController+ARSCNViewDelegate.swift
+//  ARNaviVCDelegate.swift
 //  ARKit+CoreLocation
 //
 //  Created by Eric Internicola on 6/23/19.
@@ -10,7 +10,7 @@ import ARKit
 import UIKit
 
 @available(iOS 11.0, *)
-extension POIViewController: ARSCNViewDelegate {
+extension ARNaviVC: ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("Added SCNNode: \(node)")    // you probably won't see this fire

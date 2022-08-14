@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CE1031027284FE20012FA78 /* ARNaviVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1030E27284FE20012FA78 /* ARNaviVC.swift */; };
+		7CE1031127284FE20012FA78 /* ARNaviVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE1030F27284FE20012FA78 /* ARNaviVCDelegate.swift */; };
 		C5739B192705697C00D8AFC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5739B182705697C00D8AFC4 /* AppDelegate.swift */; };
 		C5739B1B27056A4000D8AFC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5739B1A27056A4000D8AFC4 /* Main.storyboard */; };
 		C5739B1D27056B4B00D8AFC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5739B1C27056B4B00D8AFC4 /* LaunchScreen.storyboard */; };
@@ -16,8 +18,6 @@
 		C5739B35270577AB00D8AFC4 /* libPods-ruvve-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B34270577AB00D8AFC4 /* libPods-ruvve-ios.a */; };
 		C5739B37270578E100D8AFC4 /* TMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B36270578E100D8AFC4 /* TMapSDK.framework */; };
 		C5739B38270578E200D8AFC4 /* TMapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5739B36270578E100D8AFC4 /* TMapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C59D63E62727EA63006C419A /* ARNaviVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D63E42727EA63006C419A /* ARNaviVC.swift */; };
-		C59D63E72727EA63006C419A /* ARNaviVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59D63E52727EA63006C419A /* ARNaviVCDelegate.swift */; };
 		C5D5992B270564D900D8BE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D5992A270564D900D8BE1E /* Assets.xcassets */; };
 		C5D59938270564D900D8BE1E /* ruvve_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D59937270564D900D8BE1E /* ruvve_iosTests.swift */; };
 		C5D59942270564D900D8BE1E /* ruvve_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D59941270564D900D8BE1E /* ruvve_iosUITests.swift */; };
@@ -64,6 +64,8 @@
 /* Begin PBXFileReference section */
 		1716E9FEBB22676A8BF2D33E /* Pods-ruvve-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios.debug.xcconfig"; path = "Target Support Files/Pods-ruvve-ios/Pods-ruvve-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		34EB73934F32B8DD80481798 /* Pods-ruvve-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ruvve-ios.release.xcconfig"; path = "Target Support Files/Pods-ruvve-ios/Pods-ruvve-ios.release.xcconfig"; sourceTree = "<group>"; };
+		7CE1030E27284FE20012FA78 /* ARNaviVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNaviVC.swift; sourceTree = "<group>"; };
+		7CE1030F27284FE20012FA78 /* ARNaviVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNaviVCDelegate.swift; sourceTree = "<group>"; };
 		C5739B182705697C00D8AFC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5739B1A27056A4000D8AFC4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C5739B1C27056B4B00D8AFC4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,8 +74,6 @@
 		C5739B2427056C7F00D8AFC4 /* DirectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectVC.swift; sourceTree = "<group>"; };
 		C5739B34270577AB00D8AFC4 /* libPods-ruvve-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-ruvve-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5739B36270578E100D8AFC4 /* TMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMapSDK.framework; path = "ruvve-ios/TMapSDK.framework"; sourceTree = "<group>"; };
-		C59D63E42727EA63006C419A /* ARNaviVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNaviVC.swift; path = "../../../../Downloads/ruvve-ios/ruvve-ios/ViewControllers/ARNaviVC.swift"; sourceTree = "<group>"; };
-		C59D63E52727EA63006C419A /* ARNaviVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNaviVCDelegate.swift; path = "../../../../Downloads/ruvve-ios/ruvve-ios/ViewControllers/ARNaviVCDelegate.swift"; sourceTree = "<group>"; };
 		C5D59923270564D500D8BE1E /* ruvve-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ruvve-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5D5992A270564D900D8BE1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5D59933270564D900D8BE1E /* ruvve-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ruvve-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,8 +139,8 @@
 		C557907E2705D61C0042DA9C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C59D63E42727EA63006C419A /* ARNaviVC.swift */,
-				C59D63E52727EA63006C419A /* ARNaviVCDelegate.swift */,
+				7CE1030E27284FE20012FA78 /* ARNaviVC.swift */,
+				7CE1030F27284FE20012FA78 /* ARNaviVCDelegate.swift */,
 				FC71D217272183A600D2FB47 /* SceneDelegate.swift */,
 				C5739B1E27056BA500D8AFC4 /* MainVC.swift */,
 				FC96B8052718AF04006EE5CD /* GooglePlacesManager.swift */,
@@ -394,9 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59D63E62727EA63006C419A /* ARNaviVC.swift in Sources */,
+				7CE1031027284FE20012FA78 /* ARNaviVC.swift in Sources */,
+				7CE1031127284FE20012FA78 /* ARNaviVCDelegate.swift in Sources */,
 				C5739B192705697C00D8AFC4 /* AppDelegate.swift in Sources */,
-				C59D63E72727EA63006C419A /* ARNaviVCDelegate.swift in Sources */,
 				C5739B1F27056BA500D8AFC4 /* MainVC.swift in Sources */,
 				C5739B2327056C5500D8AFC4 /* MapVC.swift in Sources */,
 				FC96B8072718AF04006EE5CD /* GooglePlacesManager.swift in Sources */,
@@ -566,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ruvve-ios/Preview Content\"";
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = 8R48C77S38;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -595,7 +595,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.everythingxr.app.visionNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -614,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ruvve-ios/Preview Content\"";
-				DEVELOPMENT_TEAM = QPUG3J4E4B;
+				DEVELOPMENT_TEAM = 8R48C77S38;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,7 +643,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gngsn.ruvve-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.everythingxr.app.visionNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
