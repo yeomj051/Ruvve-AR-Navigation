@@ -7,6 +7,8 @@ Personal Mobility Navigation - Ruvve
 4. [서비스 아키텍쳐](#%EF%B8%8F-서비스-아키텍쳐)
 
 ## 🛴 서비스 소개
+### RUVVE.
+루브는 개인형 이동수단을 위한 전용 경로를 찾아 AR 화면을 제공하는 **개인형 이동수단 전용 네비게이션**입니다.
 <img src="https://user-images.githubusercontent.com/43868492/233551729-af22a80c-c29e-45f6-9ded-a197ffdfe020.png"  width="500"/>
 
 
