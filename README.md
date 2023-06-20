@@ -16,6 +16,7 @@ Personal Mobility Navigation - Ruvve
 - 기대효과
   - 직관적인 길안내를 통해 공간감각 혹은 방향감각이 부족한 사람들도 쉽게 길을 찾을 수 있습니다.
  <img src="https://user-images.githubusercontent.com/43868492/184519928-87df2625-83ac-4de2-96f1-fb9ac5af7eb3.PNG" height="500"/>
+
 - **현재 주행상황에대한 정보 제공**
 - 기대효과
   - 현재 주행 한 시간, 이동한 거리, 목적지까지의 거리 정보를 제공함으로서 사용자가 현제 주행상황을 정확히 파악할 수 있습니다.
